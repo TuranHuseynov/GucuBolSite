@@ -1,0 +1,110 @@
+body{
+	min-width: 480px;
+    background: black;
+    color: snow;
+   
+    
+    cursor: default;
+}
+
+#top{
+	    margin: 0 auto;
+    background: #fff;
+    display: none;
+    transition: all .5s linear;
+}
+
+.btnsf{
+	font-size: 40px;
+    background: #269def;
+    color: snow;
+    padding: 28px 110px;
+    font-family: monospace;
+    border: 1px solid snow;
+    border-radius: 2%;
+}
+img{
+	display: block;
+	width: 100%;
+}
+
+.content{
+	text-align: center;
+	font-size: 17px;
+	    text-align: center;
+    padding: 2px 24px;
+    background: black;
+}
+
+h2{
+	color: red;
+}
+
+.sifarisform{
+	text-align: center;
+}
+
+input{
+	    font-size: 34px;
+    display: block;
+    position: relative;
+    margin: 21px auto;
+    border: 1px solid #ccc;
+    padding: 16px 20px;
+}
+.sifarisform button {
+	    font-size: 40px;
+    padding: 20px 48px;
+    background: #2a3270;
+    color: snow;
+    border: 4px solid #da941b;
+    margin-bottom: 10px;
+}
+.sifarisform p {
+	    font-size: 24px;
+    color: red;
+    font-style: italic;
+}
+.sifarisform h1{
+	font-size: 35px;
+    color: red;
+}
+.note{
+	text-align: center;
+	    background: #f71b1b;
+    color: snow;
+    padding: 10px 30px;
+    font-size: 14px;
+
+}
+
+.topph{
+        width: 100%;
+    
+}
+.topph img{
+    height:300px;
+}
+#guller ul{
+    display: flex;
+}
+#guller li{
+    list-style: none;
+    float: left;
+
+
+}
+#guller li img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+#guller .inform {
+    position: fixed;
+    transform: translate(50%,50%);
+    font-size: 70px;
+    text-align: center;
+    background: #00508b47;
+    padding: 12px;
+}

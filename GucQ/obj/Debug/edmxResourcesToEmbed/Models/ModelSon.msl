@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_A3E145_azmanazModelStoreContainer" CdmEntityContainer="DB_A3E145_azmanazEntities1">
+    <EntitySetMapping Name="Mehsuls">
+      <EntityTypeMapping TypeName="DB_A3E145_azmanazModel.Mehsul">
+        <MappingFragment StoreEntitySet="Mehsul">
+          <ScalarProperty Name="mehsul_id" ColumnName="mehsul_id" />
+          <ScalarProperty Name="mehsulun_adi" ColumnName="mehsulun_adi" />
+          <ScalarProperty Name="mehsulun_linki" ColumnName="mehsulun_linki" />
+          <ScalarProperty Name="mehsulun_sekli" ColumnName="mehsulun_sekli" />
+          <ScalarProperty Name="mehsul_qiymeti" ColumnName="mehsul_qiymeti" />
+          <ScalarProperty Name="mehsul_price" ColumnName="mehsul_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sifaris">
+      <EntityTypeMapping TypeName="DB_A3E145_azmanazModel.Sifari">
+        <MappingFragment StoreEntitySet="Sifaris">
+          <ScalarProperty Name="sifaris_id" ColumnName="sifaris_id" />
+          <ScalarProperty Name="sifarisci_ad_soyad" ColumnName="sifarisci_ad_soyad" />
+          <ScalarProperty Name="sifarisci_telefon" ColumnName="sifarisci_telefon" />
+          <ScalarProperty Name="sifarisci_unvani" ColumnName="sifarisci_unvani" />
+          <ScalarProperty Name="sifaris_tarixi" ColumnName="sifaris_tarixi" />
+          <ScalarProperty Name="sifaris_novu_id" ColumnName="sifaris_novu_id" />
+          <ScalarProperty Name="sifaris_mehsul_adi" ColumnName="sifaris_mehsul_adi" />
+          <ScalarProperty Name="sifaris_qeyd" ColumnName="sifaris_qeyd" />
+          <ScalarProperty Name="sifaris_qiymet" ColumnName="sifaris_qiymet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SifarisNovus">
+      <EntityTypeMapping TypeName="DB_A3E145_azmanazModel.SifarisNovu">
+        <MappingFragment StoreEntitySet="SifarisNovu">
+          <ScalarProperty Name="sifaris_type_id" ColumnName="sifaris_type_id" />
+          <ScalarProperty Name="sifaris_type" ColumnName="sifaris_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

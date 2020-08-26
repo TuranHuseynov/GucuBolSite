@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A3E145_azmanazwebpageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="status_id" />
+    </Key>
+    <Property Name="status_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="status_ad" Type="String" MaxLength="51" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Zakazlars" Relationship="Self.FK_Zakazlar_Status" FromRole="Status" ToRole="Zakazlar" />
+  </EntityType>
+  <EntityType Name="Zakazlar">
+    <Key>
+      <PropertyRef Name="sifarisler_id" />
+    </Key>
+    <Property Name="sifarisler_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad_soyad" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="telefon" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="qeyd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tarix" Type="DateTime" Precision="3" />
+    <Property Name="mehsul" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="status_id" Type="Int32" />
+    <NavigationProperty Name="Status" Relationship="Self.FK_Zakazlar_Status" FromRole="Zakazlar" ToRole="Status" />
+  </EntityType>
+  <Association Name="FK_Zakazlar_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Zakazlar" Type="Self.Zakazlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="status_id" />
+      </Principal>
+      <Dependent Role="Zakazlar">
+        <PropertyRef Name="status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_A3E145_azmanazwebpageEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="Zakazlars" EntityType="Self.Zakazlar" />
+    <AssociationSet Name="FK_Zakazlar_Status" Association="Self.FK_Zakazlar_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Zakazlar" EntitySet="Zakazlars" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GucQ", "GucQ\GucQ.csproj", "{3F0FE711-AD1A-417C-82D0-83CFDA640791}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F0FE711-AD1A-417C-82D0-83CFDA640791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F0FE711-AD1A-417C-82D0-83CFDA640791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F0FE711-AD1A-417C-82D0-83CFDA640791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F0FE711-AD1A-417C-82D0-83CFDA640791}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3DAC0C4-07E3-434B-A79C-FB733E826C95}
+	EndGlobalSection
+EndGlobal

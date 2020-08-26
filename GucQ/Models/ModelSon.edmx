@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_A3E145_azmanazModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Mehsul">
+          <Key>
+            <PropertyRef Name="mehsul_id" />
+          </Key>
+          <Property Name="mehsul_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mehsulun_adi" Type="nchar" MaxLength="10" />
+          <Property Name="mehsulun_linki" Type="nvarchar" MaxLength="600" />
+          <Property Name="mehsulun_sekli" Type="nvarchar(max)" />
+          <Property Name="mehsul_qiymeti" Type="nvarchar" MaxLength="100" />
+          <Property Name="mehsul_price" Type="int" />
+        </EntityType>
+        <EntityType Name="Sifaris">
+          <Key>
+            <PropertyRef Name="sifaris_id" />
+          </Key>
+          <Property Name="sifaris_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sifarisci_ad_soyad" Type="nvarchar" MaxLength="200" />
+          <Property Name="sifarisci_telefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="sifarisci_unvani" Type="nvarchar(max)" />
+          <Property Name="sifaris_tarixi" Type="datetime" />
+          <Property Name="sifaris_novu_id" Type="int" />
+          <Property Name="sifaris_mehsul_adi" Type="nvarchar" MaxLength="200" />
+          <Property Name="sifaris_qeyd" Type="nvarchar(max)" />
+          <Property Name="sifaris_qiymet" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SifarisNovu">
+          <Key>
+            <PropertyRef Name="sifaris_type_id" />
+          </Key>
+          <Property Name="sifaris_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sifaris_type" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_Sifaris_SifarisNovu">
+          <End Role="SifarisNovu" Type="Self.SifarisNovu" Multiplicity="0..1" />
+          <End Role="Sifaris" Type="Self.Sifaris" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SifarisNovu">
+              <PropertyRef Name="sifaris_type_id" />
+            </Principal>
+            <Dependent Role="Sifaris">
+              <PropertyRef Name="sifaris_novu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_A3E145_azmanazModelStoreContainer">
+          <EntitySet Name="Mehsul" EntityType="Self.Mehsul" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sifaris" EntityType="Self.Sifaris" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SifarisNovu" EntityType="Self.SifarisNovu" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Sifaris_SifarisNovu" Association="Self.FK_Sifaris_SifarisNovu">
+            <End Role="SifarisNovu" EntitySet="SifarisNovu" />
+            <End Role="Sifaris" EntitySet="Sifaris" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_A3E145_azmanazModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Mehsul">
+          <Key>
+            <PropertyRef Name="mehsul_id" />
+          </Key>
+          <Property Name="mehsul_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mehsulun_adi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="mehsulun_linki" Type="String" MaxLength="600" FixedLength="false" Unicode="true" />
+          <Property Name="mehsulun_sekli" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mehsul_qiymeti" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="mehsul_price" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Sifari">
+          <Key>
+            <PropertyRef Name="sifaris_id" />
+          </Key>
+          <Property Name="sifaris_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sifarisci_ad_soyad" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="sifarisci_telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sifarisci_unvani" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sifaris_tarixi" Type="DateTime" Precision="3" />
+          <Property Name="sifaris_novu_id" Type="Int32" />
+          <Property Name="sifaris_mehsul_adi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="sifaris_qeyd" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sifaris_qiymet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SifarisNovu" Relationship="Self.FK_Sifaris_SifarisNovu" FromRole="Sifaris" ToRole="SifarisNovu" />
+        </EntityType>
+        <EntityType Name="SifarisNovu">
+          <Key>
+            <PropertyRef Name="sifaris_type_id" />
+          </Key>
+          <Property Name="sifaris_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sifaris_type" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Sifaris" Relationship="Self.FK_Sifaris_SifarisNovu" FromRole="SifarisNovu" ToRole="Sifaris" />
+        </EntityType>
+        <Association Name="FK_Sifaris_SifarisNovu">
+          <End Role="SifarisNovu" Type="Self.SifarisNovu" Multiplicity="0..1" />
+          <End Role="Sifaris" Type="Self.Sifari" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SifarisNovu">
+              <PropertyRef Name="sifaris_type_id" />
+            </Principal>
+            <Dependent Role="Sifaris">
+              <PropertyRef Name="sifaris_novu_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_A3E145_azmanazEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Mehsuls" EntityType="Self.Mehsul" />
+          <EntitySet Name="Sifaris" EntityType="Self.Sifari" />
+          <EntitySet Name="SifarisNovus" EntityType="Self.SifarisNovu" />
+          <AssociationSet Name="FK_Sifaris_SifarisNovu" Association="Self.FK_Sifaris_SifarisNovu">
+            <End Role="SifarisNovu" EntitySet="SifarisNovus" />
+            <End Role="Sifaris" EntitySet="Sifaris" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_A3E145_azmanazModelStoreContainer" CdmEntityContainer="DB_A3E145_azmanazEntities1">
+          <EntitySetMapping Name="Mehsuls">
+            <EntityTypeMapping TypeName="DB_A3E145_azmanazModel.Mehsul">
+              <MappingFragment StoreEntitySet="Mehsul">
+                <ScalarProperty Name="mehsul_id" ColumnName="mehsul_id" />
+                <ScalarProperty Name="mehsulun_adi" ColumnName="mehsulun_adi" />
+                <ScalarProperty Name="mehsulun_linki" ColumnName="mehsulun_linki" />
+                <ScalarProperty Name="mehsulun_sekli" ColumnName="mehsulun_sekli" />
+                <ScalarProperty Name="mehsul_qiymeti" ColumnName="mehsul_qiymeti" />
+                <ScalarProperty Name="mehsul_price" ColumnName="mehsul_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sifaris">
+            <EntityTypeMapping TypeName="DB_A3E145_azmanazModel.Sifari">
+              <MappingFragment StoreEntitySet="Sifaris">
+                <ScalarProperty Name="sifaris_id" ColumnName="sifaris_id" />
+                <ScalarProperty Name="sifarisci_ad_soyad" ColumnName="sifarisci_ad_soyad" />
+                <ScalarProperty Name="sifarisci_telefon" ColumnName="sifarisci_telefon" />
+                <ScalarProperty Name="sifarisci_unvani" ColumnName="sifarisci_unvani" />
+                <ScalarProperty Name="sifaris_tarixi" ColumnName="sifaris_tarixi" />
+                <ScalarProperty Name="sifaris_novu_id" ColumnName="sifaris_novu_id" />
+                <ScalarProperty Name="sifaris_mehsul_adi" ColumnName="sifaris_mehsul_adi" />
+                <ScalarProperty Name="sifaris_qeyd" ColumnName="sifaris_qeyd" />
+                <ScalarProperty Name="sifaris_qiymet" ColumnName="sifaris_qiymet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SifarisNovus">
+            <EntityTypeMapping TypeName="DB_A3E145_azmanazModel.SifarisNovu">
+              <MappingFragment StoreEntitySet="SifarisNovu">
+                <ScalarProperty Name="sifaris_type_id" ColumnName="sifaris_type_id" />
+                <ScalarProperty Name="sifaris_type" ColumnName="sifaris_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

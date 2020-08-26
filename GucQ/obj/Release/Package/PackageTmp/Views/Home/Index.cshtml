@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BirGuc</title>
+    <link rel="stylesheet" type="text/css" href="/Q7/style.css">
+    <link rel="icon" href="data:image/jpeg;base64,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" type="image/gif" sizes="16x16">
+
+</head>
+<body>
+    <section id="top">
+        <a href="#sifrid"><img src="/Q7/image/phead.jpg"></a>
+        <br>
+        <div class="content">
+            <h2>Günümüzdə Zəiflik</h2>
+            <p>Gecə yataq həyatını mükəmməl şəkildə sonlandırmaq hər dəfə mümkün olmur. Hətta artıq bu zamanla problemə çevrilir. </p>
+
+            <hr>
+            <blockquote>Problemi Məxfi Saxlayırsınız ?</blockquote>
+            <p> Bu problemin həllini Məxfiliyinizi qoruyaraq biz həll edə bilərik. Həm də həkim yanına belə getmədən.</p>
+
+            <hr>
+            <p>Müalicə məqsədilə istifadə olunan Q7 ilk istifadədən efektiini görəcəyiniz məhsuldur. </p>
+            <p>Xüsusi bitkilər qarışığından hazırlanmışdır satışı türkiyədə də rekor həddə çatan məhsulu ayağınıza gətiririk.</p>
+            <a href="#sifrid"><button class="btnsf">SİFARİŞ ET</button></a>
+
+        </div>
+
+        @*<a href="#sifrid"><img src="/Q7/image/first.jpg"></a>*@
+
+        <div class="content">
+            <h2>Artıq Gecələr daha uzun olacaq</h2>
+            <p>Q7 ilə gücünü artır. Problemlərini heçkimlə bölüşmədən aradan qaldır</p>
+            <h1>Elə İndi Yoxla</h1>
+            <h2>SİFARİŞ ETMƏK SİZİN MƏXFİLİYİNİZ POZMUŞ SAYILMIR !</h2>
+
+        </div>
+
+
+        <a href="#sifrid"><img src="/Q7/image/as2.jpg"></a>
+
+        <div class="sifarisform">
+            <h1>Sifariş Formu</h1>
+            <form action="/Home/Datagonder" method="post" name="frmbir">
+                <input type="text" name="sifarisci_ad_soyad" placeholder="Adınız">
+                <input type="text" name="mehsulun_adi" style="display:none;" value="Q7 Macun 29 Azn" />
+                <input type="tel" name="sifarisci_telefon" placeholder="Əlaqə Telefonu"><br>
+
+                <button type="submit" onclick="return IsEmpt1()">Sifariş et</button>
+            </form>
+        </div>
+        <a href="#sifrid" style="margin-bottom: 20px;"><img src="/Q7/image/info.jpg"></a>
+        <a href="#sifrid"><img src="/Q7/image/as3.jpg"></a>
+
+
+        <div class="sifarisform" id="sifrid">
+            <h1>Sifariş Formu</h1>
+            <form action="/Home/Datagonder" method="post" name="frmiki">
+                <input type="text" name="sifarisci_ad_soyad" placeholder="Adınız">
+                <input type="text" name="mehsulun_adi" style="display:none;" value="Q7 Macun 29 Azn" />
+                <input type="tel" name="sifarisci_telefon" placeholder="Əlaqə Telefonu"><br>
+                <button type="submit" onclick="return IsEmpt2()">Sifariş et</button>
+            </form>
+        </div>
+
+        <p class="note">
+            Sizinlə əlaqə saxlayana qədər formda qeyd etdiyiniz nömrəni Aktiv saxlayın
+        </p>
+    </section>
+
+
+    <section id="guller">
+
+        <p class="inform"> sadəcə 4 saniyə </p>
+        <div class="topph">
+            <img src="/Q7/image/horse1.jpg">
+        </div>
+        <ul class="btmph">
+            <li><img src="/Q7/image/horse2.jpg"></li>
+            <li><img src="/Q7/image/horse3.jpg"></li>
+            <li><img src="/Q7/image/horse1.jpg"></li>
+            <li><img src="/Q7/image/horse4.jpg"></li>
+        </ul>
+
+    </section>
+
+
+
+    @*<script type="text/javascript" src="/Q7/script.js"></script>*@
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        let topphot = document.querySelector(".topph img");
+        let allphot = document.querySelectorAll(".btmph img");
+        let headsc = document.getElementById("top");
+        let horses = document.getElementById("guller");
+
+        for (photos of allphot) {
+            photos.addEventListener("click", function () {
+                topphot.setAttribute("src", this.getAttribute("src"))
+            })
+
+        }
+
+
+
+        //document.body.addEventListener("mousemove", function () {
+            setTimeout(function () {
+                headsc.style.display = 'block';
+                horses.style.display = 'none';
+
+            },1410);
+
+        //})
+
+
+        function IsEmpt1() {
+            if (document.forms['frmbir'].sifarisci_ad_soyad.value === "" || document.forms['frmbir'].sifarisci_telefon.value === "") {
+                swal("Hər iki bölməni doldurun");
+                return false;
+            } else {
+                swal("Sorğunuz qeydə alındı, Tezliklə Sizinlə Əlaqə Qurulacaq. Telefonunuzu Aktiv Tutun");
+                return true;
+            };
+
+        };
+
+
+        function IsEmpt2() {
+            if (document.forms['frmiki'].sifarisci_ad_soyad.value === "" || document.forms['frmiki'].sifarisci_telefon.value === "") {
+                swal("Hər iki bölməni doldurun");
+                return false;
+            } else {
+                swal("Sorğunuz qeydə alındı, Tezliklə Sizinlə Əlaqə Qurulacaq. Telefonunuzu Aktiv Tutun");
+                return true;
+            };
+
+        };
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
